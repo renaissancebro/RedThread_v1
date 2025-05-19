@@ -1,38 +1,100 @@
-const puppeteer = require('puppeteer');
+"use strict";
+// This script uses Puppeteer to scrape the MIIT website for search results.
+const puppeteer = require("puppeteer");
+const fs = require("fs");
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({
+    headless: false,
+    protocolTimeout: 60000,
+  });
+
   const page = await browser.newPage();
 
-  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64)');
-  await page.goto('http://www.miit.gov.cn/', { waitUntil: 'domcontentloaded' });
+  // Stealth setup
+  await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, "webdriver", { get: () => false });
+    Object.defineProperty(navigator, "languages", {
+      get: () => ["zh-CN", "zh", "en-US"],
+    });
+    Object.defineProperty(navigator, "plugins", { get: () => [1, 2, 3] });
+    window.chrome = { runtime: {} };
 
-  console.log('Page loaded!');
+    const originalQuery = window.navigator.permissions.query;
+    window.navigator.permissions.query = (parameters) =>
+      parameters.name === "notifications"
+        ? Promise.resolve({ state: Notification.permission })
+        : originalQuery(parameters);
 
-  // Fill in the search box
-  await page.locator('input.search-form-txt.bt-size-16').fill('稀土');
+    const getParameter = WebGLRenderingContext.prototype.getParameter;
+    WebGLRenderingContext.prototype.getParameter = function (parameter) {
+      if (parameter === 37445) return "Intel Inc.";
+      if (parameter === 37446) return "Intel Iris OpenGL Engine";
+      return getParameter(parameter);
+    };
+  });
 
-  // Click the search button (no navigation!)
-  await page.locator('.search-form-btn').click();
+  // Go to homepage and perform search
+  await page.goto("http://www.miit.gov.cn/", { waitUntil: "networkidle2" });
+  console.log("Page loaded!");
 
-  // Wait for the new tab or popup to open
-  const newPagePromise = new Promise(resolve => browser.once('targetcreated', target => resolve(target.page())));
-  const newPage = await newPagePromise;
+  await page.waitForSelector("input.search-form-txt.bt-size-16");
+  await page.type("input.search-form-txt.bt-size-16", "稀土");
 
-  await newPage.bringToFront();
-  await newPage.waitForLoadState?.('domcontentloaded'); // only works in Playwright, so fallback below
+  const [newPage] = await Promise.all([
+    new Promise((resolve) =>
+      browser.once("targetcreated", async (target) => {
+        const newPage = await target.page();
+        await newPage.bringToFront();
+        resolve(newPage);
+      })
+    ),
+    page.click(".search-form-btn"),
+  ]);
+
+  // Crude wait or smarter wait below
+  console.log("sleeping for 3s");
+  await sleep(3000);
+  console.log("done waiting");
+
+  await newPage.waitForSelector(".itemdiv", { timeout: 10000 });
+  await newPage.waitForFunction(
+    () => {
+      const el = document.querySelector(".itemdiv");
+      return el && el.innerText.trim().length > 0;
+    },
+    { timeout: 10000 }
+  );
+
+  console.log("✅ Navigated to search results");
+  console.log("URL:", await newPage.url());
+  console.log("Title:", await newPage.title());
+
+  // Debug dump
+  const html = await newPage.content();
+  fs.writeFileSync("debug.html", html);
+  await newPage.screenshot({ path: "screenshot.png", fullPage: true });
+
+  // Extract text from each result item
+  let results = [];
   try {
-    await newPage.waitForSelector('.jcse-result-box .news-result', { timeout: 10000 });
-  } catch(err) {
-    await newPage.screenshot({ path: 'after_click.png', fullPage: true });
-  }
-    const results = await newPage.$$('.jcse-result-box .news-result');
-  console.log(`Found ${results.length} results`);
+    results = await newPage.evaluate(() => {
+      return Array.from(document.querySelectorAll(".search_list_item"))
+        .map((el) => el.innerText.trim())
+        .filter(Boolean);
+    });
 
-  for (const r of results) {
-    const text = await r.evaluate(el => el.innerText.trim());
-    console.log(text);
+    console.log(`\n🧾 Found ${results.length} results:\n`);
+  } catch (err) {
+    console.error("Error extracting results:", err);
   }
 
+  results.forEach((text, index) => {
+    console.log(`${index + 1}. ${text}`);
+  });
+
+  await sleep(5000);
   await browser.close();
 })();
