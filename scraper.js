@@ -81,15 +81,20 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   let results = [];
   try {
     results = await newPage.evaluate(() => {
-      return Array.from(document.querySelectorAll(".search_list_item"))
+      return Array.from(document.querySelectorAll(".jcse-result-box .itemdiv"))
         .map((el) => el.innerText.trim())
         .filter(Boolean);
     });
-
     console.log(`\n🧾 Found ${results.length} results:\n`);
   } catch (err) {
     console.error("Error extracting results:", err);
   }
+  const logResults = await newPage.evaluate(() => {
+    const items = Array.from(
+      document.querySelectorAll(".jcse-result-box .itemdiv")
+    );
+    return items.map((item) => item.innerText);
+  });
 
   results.forEach((text, index) => {
     console.log(`${index + 1}. ${text}`);

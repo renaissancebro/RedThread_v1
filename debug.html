@@ -1,0 +1,567 @@
+<!DOCTYPE html><html style="font-size: 16px;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+    <meta content="*">
+    
+<script type="text/javascript" async="" src="https://www.miit.gov.cn/jubac/sync/detailcollect.do"></script><script src="/cms_files/default/script/jslib/jquery.js"></script>
+ <script src="/cms_files/default/script/jslib/jquery.cookie.js"></script>
+ <script src="/cms_files/default/script/layui/layui.all.js"></script><link id="layuicss-laydate" rel="stylesheet" href="https://www.miit.gov.cn/cms_files/default/script/layui/css/modules/laydate/default/laydate.css?v=5.0.9" media="all"><link id="layuicss-layer" rel="stylesheet" href="https://www.miit.gov.cn/cms_files/default/script/layui/css/modules/layer/default/layer.css?v=3.1.1" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="https://www.miit.gov.cn/cms_files/default/script/layui/css/modules/code.css" media="all">
+ <script src="/cms_files/default/script/layui/layer/layer.js"></script>
+ <script src="/script/webglobal.js"></script>
+ <script src="/plugins/libs/require.js"></script>
+ <script src="/plugins/libs/load.js"></script>
+ <script src="/script/webgray.js"></script>
+ <link rel="stylesheet" href="/cms_files/default/css/iconfont.css">
+<link rel="stylesheet" href="/cms_files/default/script/layui/css/layui.css">
+<title>数据统一检索平台</title>
+<meta name="Keywords" content="工信部,工业和信息化部,工业和信息化,工业,信息化,中华人民共和国工业和信息化部">
+<meta name="Titles" content="中华人民共和国工业和信息化部统一检索平台">
+<meta name="Descriptions" content="中华人民共和国工业和信息化部统一检索平台">
+<meta name="SiteName" content="中华人民共和国工业和信息化部">
+<meta name="SiteDomain" content="www.miit.gov.cn">
+<meta name="SiteIDCode" content="bm07000001">
+<meta name="ColumnName" content="统一检索">
+<meta name="ColumnType" content="检索页">
+<meta name="ColumnDescription" content="中华人民共和国工业和信息化部网站数据统一检索平台">
+<meta name="ColumnKeywords" content="检索"><meta name="MakeTime" content="2024-09-23 12:11:40">
+
+<meta id="pagetype" content="0">
+<script type="text/javascript" charset="UTF-8" src="./script/plugins.js"></script><script type="text/javascript" charset="UTF-8" src="/script/plugins.js"></script><link href="https://www.miit.gov.cn/cms_files/datepicker/skin/WdatePicker.css" rel="stylesheet" type="text/css"><style type="text/css" media="screen">#flashcontent {visibility:hidden}</style><link type="text/css" rel="stylesheet" href="/cms_files/filemanager/css/hanweb.css"><script type="text/javascript" src="https://www.miit.gov.cn/jubac/sync/getUserInfo.do?webid=12&amp;hostname=www.miit.gov.cn&amp;cookid=26647453651152640000&amp;visitortype=0&amp;lastdays=0&amp;l_time=6&amp;old_time=2025-05-19%2011%3A58%3A13&amp;sessionid=13226102431653030000&amp;sessiontype=1&amp;url=https%253A%252F%252Fwww.miit.gov.cn%252Fsearch%252Findex.html%253Fwebsiteid%253D110000000000000%2526pg%253D%2526p%253D%2526tpl%253D%2526category%253D%2526jsflIndexSeleted%253D%2526q%253D%2525E7%2525A8%252580%2525E5%25259C%25259F&amp;title=%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%259F%25E4%25B8%2580%25E6%25A3%2580%25E7%25B4%25A2%25E5%25B9%25B3%25E5%258F%25B0&amp;urltype=0&amp;ref=https%253A%252F%252Fwww.miit.gov.cn%252F&amp;browser=Chrome&amp;os=Mac%2FiOS&amp;terminal=pc&amp;cookie=1&amp;java=1&amp;resolution=1440x900&amp;color=30-bit&amp;lan=en-us&amp;keyword=null&amp;num=0.7196710233730368&amp;callback=handleResponse"></script></head>
+<body class="module mudule2S" aria-status="false" aria-ofstatus="false" aria-basefontsize="14">
+	<a id="ariaTipText" role="pagedescription" aria-label="欢迎进入 数据统一检索平台,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。" aria-atomic="true" href="javascript:void(0)" class="skipAutoFix" style="width: 1px; height: 1px;"><img src="" style="width:1px !important;height:1px !important;position:absolute;top:0;"></a><link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/hanweb.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/main.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/bmfw.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/autocomplete.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/dimentioncss.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/ui.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/result.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/mainframe.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/voice.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/zwdt_v3.css">
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/source.css">
+    <!--<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jQuery.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<link rel="stylesheet" type="text/css" href="https://www.miit.gov.cn/cms_files/datepicker/skin/WdatePicker.css">
+	<script src="https://www.miit.gov.cn/cms_files/datepicker/WdatePicker.js"></script>
+	<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jquery.autocomplete.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/echarts.min.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/common.js"></script>
+	<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/condition.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/search.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/json2.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/cycle.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/autocomplete.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jquery.myPagination.js"></script>
+    <script type="text/javascript" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jquery.waterfall.js"></script>
+
+    <!-- 分页 -->
+    <link rel="stylesheet" type="text/css" href="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/page.css">
+    <!-- 相关热词、图片 -->
+
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/hotnew.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/dimentionjs.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/dimension.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/searchbtn.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/mainframe.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/spellcheck.js"></script>
+    <!--语音识别 -->
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/main.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/voiceRecorder.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/HZRecorder.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/recorder.js"></script>
+    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/swfobject.js"></script>
+    <!--树 -->
+<!--    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/zwfwv3.js"></script>-->
+    <!--瀑布流 -->
+<!--    <script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/website.js"></script>-->
+
+<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/big5.js"></script>
+<!--[if lt IE 9]>
+<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/html5shiv.js"></script>
+<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/respond.min.js"></script>
+<![endif]-->
+<script src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/home-ty.js"></script><link href="/cms_files/webmiit/tplobject/gxbsy/4984e80265724387a61b3e7a275ad3ad/images/main.css" type="text/css" rel="stylesheet">
+<style>.w1100{clear:both;}</style>
+
+
+
+<div id="search-form" data-needlay="" data-path="search-front-server/" data-selectfield="title,content,deploytime,_index,url,cdate,infoextends,infocontentattribute,keyword,contentdescribe,sectitle,picpath,columnname,themename,publishgroupname,publishtime,metaid,bexxgk,columnid,infocontenthashcode" data-highlightconfigs="{&quot;field&quot;:&quot;content&quot;,&quot;numberOfFragments&quot;:2,&quot;fragmentOffset&quot;:0,&quot;fragmentSize&quot;:126}">
+    <input id="webid" name="websiteid" type="hidden" value="110000000000000">
+    <input id="input-searchid" name="searchid" type="hidden" value="1">
+    <input id="pg" name="pg" type="hidden" value="">
+    <input id="p" name="p" type="hidden" value="1">
+    <input id="tpl" name="tpl" type="hidden" value="">
+    <input id="cateid" name="cateid" type="hidden" value="">
+	<input id="total" name="total" type="hidden" value="828">
+    <div class="banner">
+		<div class="page-con">
+			<!-- 头部 -->
+			<div class="js-top">
+				<a href="/"><img class="js-topimg1" src="/cms_files/filemanager/1226211233/picture/20222/ac606e43c9b24276b75d7847da79b96c.png"></a>
+				<img class="js-topimg2" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/searchlogo2.png">
+			</div>
+
+			<div class="search-wrap">
+				<div class="search">
+					<input type="text" name="q" id="q" class="ipt_txt hover" placeholder="" value="" onclick="gethistory()" onkeydown="doKeyDown();" maxlength="100" autocomplete="off">
+
+					<input type="button" class="ipt_btn" id="ipt_btn">
+					<span class="ui-search-btn-adv">高级检索</span>
+					<div id="jsearch-adv-box" class="ui-adv-search-box">
+						<div class="ui-adv-search-field-box">
+							<div class="ui-adv-search-field-label">包含以下<strong>完整</strong>关键词</div>
+							<input class="ui-adv-search-field-input" id="pq" name="pq" type="text" value="" autocomplete="off">
+						</div>
+						<div class="ui-adv-search-field-box">
+							<div class="ui-adv-search-field-label">包含以下<strong>任意</strong>关键字词</div>
+							<input class="ui-adv-search-field-input" id="oq" name="oq" type="text" value="" autocomplete="off">
+						</div>
+						<div class="ui-adv-search-field-box">
+							<div class="ui-adv-search-field-label"><strong>不包含</strong>以下关键词</div>
+							<input class="ui-adv-search-field-input" id="eq" name="eq" type="text" value="" autocomplete="off">
+						</div>
+
+					</div>
+
+
+					<div class="flashtip">
+						<span id="save_button"><span id="flashcontent" style="visibility: visible;"></span></span>
+						</div>
+						<div class="voiceabslut" style="display: none;">
+							<div class="underdiv">
+								<img class="undervoice" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/blackmark.png" style="display: inline;">
+							</div>
+							<div class="frontdiv">
+								<img class="frontvoice" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/redmark.png" style="display: inline;">
+							</div>
+						</div>
+						<div class="allhistory">
+							<ul id="historylist"></ul>
+						</div>
+					
+					</div>
+
+
+					<div class="rc" id="jcse-hotwordrank" style="display: block;">
+						<span id="hotwordword">热词:<span class="hotwordrank"><a>通信</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>物联网</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>疫情防控</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>互联网</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>服务器</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>行政处罚</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>满意度</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>评标</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>专家</a>&nbsp;&nbsp;&nbsp;</span><span class="hotwordrank"><a>初级</a>&nbsp;&nbsp;&nbsp;</span></span>
+						<span id="hotwordrank" class="hotwordrank"></span>
+					</div>
+
+				</div>
+
+            
+		</div>
+    </div>
+
+
+    <!-- 主体内容 -->
+    <div id="jsearch-plugin-mainframe"></div>
+	<div class="main">
+		<div class="col_nav">
+			<ul class="jcse-seachmanage"><li class="search-manage hover" id="one1" onmouseover="'setTab3(&quot;one&quot;,&quot;1&quot;)'" data-searchmanageid="1" data-id="">部门户网站</li><li class="search-manage" id="one45" onmouseover="'setTab3(&quot;one&quot;,&quot;45&quot;)'" data-searchmanageid="45" data-id="">新闻发布</li><li class="search-manage" id="one46" onmouseover="'setTab3(&quot;one&quot;,&quot;46&quot;)'" data-searchmanageid="46" data-id="">政务公开</li><li class="search-manage" id="one47" onmouseover="'setTab3(&quot;one&quot;,&quot;47&quot;)'" data-searchmanageid="47" data-id="">政务服务</li><li class="search-manage" id="one48" onmouseover="'setTab3(&quot;one&quot;,&quot;48&quot;)'" data-searchmanageid="48" data-id="">互动交流</li><li class="search-manage" id="one49" onmouseover="'setTab3(&quot;one&quot;,&quot;49&quot;)'" data-searchmanageid="49" data-id="">工信数据</li><li class="search-manage" id="one174" onmouseover="'setTab3(&quot;one&quot;,&quot;174&quot;)'" data-searchmanageid="174" data-id="">部网站群</li></ul>
+		</div>
+		<div class="page-con">
+
+			<div id="jsearch-condition-box-content">
+            <div class="jsearch-condition-box" id="pos-box">
+                <input id="pos" name="pos" type="hidden" value="title_text,titlepy,infocontent,filenumbername,keyword,contentdescribe">
+                <div class="jsearch-condition-box-title">查询范围：<span>全部</span></div>
+                <div class="jsearch-condition-box-items">
+                    <div class="jsearch-condition-box-item" data-value="title_text,titlepy,infocontent,filenumbername,keyword,contentdescribe">全部</div>
+                    <div class="jsearch-condition-box-item" data-value="title_text,titlepy">标题</div>
+                    <div class="jsearch-condition-box-item" data-value="infocontent">正文</div>
+					<div class="jsearch-condition-box-item" data-value="filenumbername">文号</div>
+                </div>
+            </div>
+
+            <div class="jsearch-condition-box" id="od-box">
+				<input id="od" name="sortFields" type="hidden" value="[{&quot;name&quot;:&quot;extend1&quot;,&quot;type&quot;:&quot;desc&quot;},{&quot;name&quot;:&quot;jsearch_score&quot;,&quot;type&quot;:&quot;desc&quot;}]">
+				<div class="jsearch-condition-box-title">排序方式：<span>默认</span></div>
+				<div class="jsearch-condition-box-items">
+					<div class="od-box1 jsearch-condition-box-item" data-value="[{&quot;name&quot;:&quot;extend1&quot;,&quot;type&quot;:&quot;desc&quot;},{&quot;name&quot;:&quot;deploytime&quot;,&quot;type&quot;:&quot;desc&quot;}]">默认</div>
+					<div class="od-box2 jsearch-condition-box-item" data-value="[{&quot;name&quot;:&quot;extend1&quot;,&quot;type&quot;:&quot;desc&quot;},{&quot;name&quot;:&quot;jsearch_score&quot;,&quot;type&quot;:&quot;desc&quot;}]">相关度</div>
+					<div class="od-box3 jsearch-condition-box-item" data-value="[{&quot;name&quot;:&quot;extend1&quot;,&quot;type&quot;:&quot;desc&quot;},{&quot;name&quot;:&quot;deploytime&quot;,&quot;type&quot;:&quot;desc&quot;}]">时间</div>
+				</div>
+            </div>
+
+            <div class="jsearch-condition-box" id="date-box" style="display: block;">
+                <div class="jsearch-condition-box-title">时间范围：
+                    <input id="date_start" readonly="" type="text" data-date-format="yyyy-MM-dd" data-date-end="date_end" class="jsearch-widget-calendar Wdate" name="begin" value="">
+                    -
+                    <input id="date_end" readonly="" type="text" class="jsearch-widget-calendar Wdate" name="end" data-date-format="yyyy-MM-dd" data-date-start="date_start" value="">
+                    <span class="jsearch-criteria-btn ok">确定</span><span class="jsearch-criteria-btn cancel">清空</span>
+                </div>
+                <div class="jsearch-condition-box-items">
+                    <div class="jsearch-condition-box-item" data-value="0">全部</div>
+                    <div class="jsearch-condition-box-item" data-value="1">一天内</div>
+                    <div class="jsearch-condition-box-item" data-value="2">一周内</div>
+                    <div class="jsearch-condition-box-item" data-value="3">一月内</div>
+                    <div class="jsearch-condition-box-item" data-value="4">一年内</div>
+                </div>
+            </div>
+
+			<div class="maction">为您找到相关结果约<span>828</span>个</div>
+
+        </div>
+
+        <div id="dimension-content"></div>
+        <div id="dimension-expand" class="open"></div>
+
+
+        <div id="web-select-box-wrap">
+            <div class="web-select-box-wrap-inner">
+                <div class="web-select-hasresult">您可以选择地区搜索</div>
+                <div id="web-select-box" class="web-select">
+                    <div class="level-wrap"></div>
+                </div>
+                <div id="web-select-box1" class="web-select">
+                    <div class="level-wrap1">
+                        <div class="level">
+                            <span class="level-head">市级部门</span>
+                            <div class="subsites1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关键字切换站点1211 -->
+            <div class="websitecheck" data-checkwebsiteid="">您当前搜索的是<span class="websiteguess"></span>点击地址切换到对应站点
+            </div>
+            <!-- 定位获取切换站点 -->
+            <div class="websitelocation" data-locationwebsite="">您当前所在的位置是<em></em>,是否切换站点<span style="color:#ff0000">【切换】</span>
+            </div>
+            <div class="stopword" data-hassensitive=""><span>根据相关法律法规和政策，搜索结果未予显示</span></div>
+			<div id="spellcheck-content">
+                您是不是要找：<span></span>
+            </div>
+        </div>
+
+			
+			<div style="width:100%;clear:both;"></div>
+            <img class="tousuimg" style="display:none" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/tousu.png">
+			<div class="content">
+				<div class="catecontent">
+					<div class="con_left">
+						<div class="zwfw-banner" style="display: none;">
+							<a href="https://ythzxfw.miit.gov.cn/" target="_blank"><img src="/cms_files/filemanager/1226211233/picture/20208/bdee68415e8e44e9a9d37fde3c86af12.jpg"></a>
+						</div><div class="yyfw">	<div class="col_title" style="display: block;">		<div class="col_name" data-sign="yyss" data-cateid="47" data-arrange-rank="" data-datanumber="10" data-mergee="0" data-page="1">			<span class="t_s2">部门户网站</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		</div>	</div>	<div class="zffw_list" data-cate-sign="" data-highlight-fields="title"><div class="news-type"><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/zfs/xzfg/art/2024/art_6f9ea672b96948488df5f9c46e5cffdd.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;管理条例"><em>稀</em><em>土</em>管理条例</div></a><p>中华人民共和国国务院令第785号《<em>稀</em><em>土</em>管理条例》已经2024年4月26日国务院第31次常务会议通过，现予公布，自2024年10月1日起施行。总　理　　李　强　   2024年6月22日　&nbsp;  <em>稀</em><em>土</em>管理条例第一...条　为有效保护和合理开发利用<em>稀</em><em>土</em>资源，促进<em>稀</em><em>土</em>产业高质量发展，维护生态安全，保障国家资源安全和产业安全，根据有关法律，制定本条例。第二条　在中华人民共和国境内从事<em>稀</em><em>土</em>的开采、冶炼分离、金属冶炼、综合利用、产品流通、进出口</p><span>所属栏目：行政法规 发布时间：2024-08-20</span></div></div></div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/xwdt/szyw/art/2024/art_d23367e9da4349868a65d423cd1960a1.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;管理条例"><em>稀</em><em>土</em>管理条例</div></a><p>中华人民共和国国务院令第785号《<em>稀</em><em>土</em>管理条例》已经2024年4月26日国务院第31次常务会议通过，现予公布，自2024年10月1日起施行。总理　　李强　　　　　　   2024年6月22日　　　　  <em>稀</em><em>土</em>管理条例第一...条　为有效保护和合理开发利用<em>稀</em><em>土</em>资源，促进<em>稀</em><em>土</em>产业高质量发展，维护生态安全，保障国家资源安全和产业安全，根据有关法律，制定本条例。第二条　在中华人民共和国境内从事<em>稀</em><em>土</em>的开采、冶炼分离、金属冶炼、综合利用、产品流通、进出口</p><span>所属栏目：时政要闻 发布时间：2024-06-29</span></div></div></div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2020/art_840da1e3057c4e8a8f460ee6136f5bab.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;办公室成立整顿&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;行业秩序专家组"><em>稀</em><em>土</em>办公室成立整顿<em>稀</em><em>土</em>行业秩序专家组</div></a><p>&nbsp;&nbsp;&nbsp;为持续推进打击<em>稀</em><em>土</em>违法违规行为专项行动，逐步将整顿工作常态化、制度化，<em>稀</em><em>土</em>办公室成立了由技术、财务、法律等方面专家组成的整顿<em>稀</em><em>土</em>行业秩序专家组，将在企业生产技术分析、原材料成分检测...、财务数据分析、依法行政等方面为<em>稀</em><em>土</em>行业秩序核查整顿提供支撑和援助。专家组成员主要来自有关行业协会、重点<em>稀</em><em>土</em>集团、研究和法律机构。</p><span>所属栏目：工作动态 发布时间：2017-06-30</span></div></div></div><div class="jcse-similarly-box"> <div class="jcse-similarly-head"><a><span>相似文章<span></span></span></a></div> <div class="jcse-similarly-items"><div class="jcse-similarly-item"><p><i></i><a target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/xt/art/2020/art_a3a2b914f7ea4bea82540d61700eb375.html&amp;websiteid=110000000000000&amp;q=" class="jcse-similarly-item-title" onclick="gotoLink()"><em>稀</em><em>土</em>办公室成立整顿<em>稀</em><em>土</em>行业秩序专家组</a><span class="similarcore"> 所属栏目：稀土- <span class="jcse-similarly-item-date">[2017-06-30]</span></span></p></div></div>
+    </div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/ycls/ysjs/art/2022/art_29f9f316fd484251919670e2ad871cfb.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;办公室就&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;产品价格问题约谈重点企业"><em>稀</em><em>土</em>办公室就<em>稀</em><em>土</em>产品价格问题约谈重点企业</div></a><p>针对<em>稀</em><em>土</em>产品市场价格持续上涨、居高不下的情况，3月3日，<em>稀</em><em>土</em>办公室约谈中国<em>稀</em><em>土</em>集团、北方<em>稀</em><em>土</em>集团、盛和资源公司等重点<em>稀</em><em>土</em>企业。会议要求，有关企业要切实增强大局意识、责任意识，正确把握当前与长远、上游与下游的关系，确保产...业链供应链安全稳定；要加强行业自律，进一步规范企业生产经营、产品交易和贸易流通等行为，不得参与市场炒作和囤积居奇；要充分发挥示范带头作用，推动健全<em>稀</em><em>土</em>产品定价机制，共同引导产品价格回归理性，促进<em>稀</em><em>土</em>产业持续健康发展。</p><span>所属栏目：有色金属 发布时间：2022-03-04</span></div></div></div><div class="jcse-similarly-box"> <div class="jcse-similarly-head"><a><span>相似文章<span></span></span></a></div> <div class="jcse-similarly-items"><div class="jcse-similarly-item"><p><i></i><a target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2022/art_ede2d32c11904dfcafe23916fadbbcf1.html&amp;websiteid=110000000000000&amp;q=" class="jcse-similarly-item-title" onclick="gotoLink()"><em>稀</em><em>土</em>办公室就<em>稀</em><em>土</em>产品价格问题约谈重点企业</a><span class="similarcore"> 所属栏目：工作动态- <span class="jcse-similarly-item-date">[2022-03-04]</span></span></p></div></div>
+    </div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/xwdt/gxdt/sjdt/art/2020/art_80abb23d671e4eecbb58f59ae251dcb9.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;办主任会见澳大利亚莱纳&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;公司首席运营官"><em>稀</em><em>土</em>办主任会见澳大利亚莱纳<em>稀</em><em>土</em>公司首席运营官</div></a><p>　　1月14日，工业和信息化部原材料工业司巡视员、<em>稀</em><em>土</em>办主任贾银松会见了到访的澳大利亚莱纳<em>稀</em><em>土</em>公司首席运营官Jean一行。贾银松向客人介绍了中国<em>稀</em><em>土</em>产业政策，并欢迎莱纳公司按照世贸规则和中国有关法律法规在<em>稀</em><em>土</em>环境保护与...治理、高端应用等领域与中国企业加强交流与合作。　　对于莱纳公司提出的<em>稀</em><em>土</em>精矿向中国出口问题，贾银松表示，目前中国<em>稀</em><em>土</em>精矿生产能力供大于求，为维护市场秩序和保护环境，不论矿产品来源，所有<em>稀</em><em>土</em>冶炼分离生产都要纳入总量管理，并严格执行环境保护标准。</p><span>所属栏目：司局动态 发布时间：2014-01-14</span></div></div></div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/ycls/xt/art/2020/art_0f0e9315b7454941819ae58c9bdd4eb9.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="原材料司与包头市&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;高新区管委会领导研究&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;工作">原材料司与包头市<em>稀</em><em>土</em>高新区管委会领导研究<em>稀</em><em>土</em>工作</div></a><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009年6月18日，包头市市长助理、<em>稀</em><em>土</em>高新区管委会主任任福和有关同志到工业和信息化部原材料司听取我部对包头<em>稀</em><em>土</em>工业发展的意见。任福...同志介绍了包头<em>稀</em><em>土</em>开发区的情况和下步工作思路。包头<em>稀</em><em>土</em>高技术产业开发区是国务院批准的全国54个国家级高新区中唯一冠以专业名称的国家级高新区，也是内蒙古自治区唯一的国家级高新区。经过多年建设，现建成了<em>稀</em><em>土</em>精矿、<em>稀</em><em>土</em>合金、混</p><span>所属栏目：稀土 发布时间：2009-06-22</span></div></div></div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/ycls/wjfb/art/2020/art_b848187aab8f44dda9b500b902a174fd.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;行业准入条件"><em>稀</em><em>土</em>行业准入条件</div></a><p>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　2012年&nbsp;&nbsp;第33号　　为有效保护<em>稀</em><em>土</em>资源和生态环境，推动<em>稀</em><em>土</em>产业结构调整和升级，规范生产经营秩序，促进<em>稀</em><em>土</em>行业持续健康...发展，根据《国务院关于促进<em>稀</em><em>土</em>行业持续健康发展的若干意见》等要求，我部会同有关部门制定了《<em>稀</em><em>土</em>行业准入条件》，现予以公告。　　有关部门和省、自治区、直辖市在对<em>稀</em><em>土</em>建设项目进行投资核准（备案）管理、国土资源管理、环境影响评</p><span>所属栏目：文件发布 发布时间：2012-08-06</span></div></div></div><div class="jcse-similarly-box"> <div class="jcse-similarly-head"><a><span>相似文章<span></span></span></a></div> <div class="jcse-similarly-items"><div class="jcse-similarly-item"><p><i></i><a target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/xt/art/2020/art_32ec0fcde81b4f9ea27e374c1dbb228b.html&amp;websiteid=110000000000000&amp;q=" class="jcse-similarly-item-title" onclick="gotoLink()"><em>稀</em><em>土</em>行业准入条件</a><span class="similarcore"> 所属栏目：稀土- <span class="jcse-similarly-item-date">[2012-08-06]</span></span></p></div><div class="jcse-similarly-item"><p><i></i><a target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2020/art_17cbaa66d26941889c5001550ff46234.html&amp;websiteid=110000000000000&amp;q=" class="jcse-similarly-item-title" onclick="gotoLink()"><em>稀</em><em>土</em>行业准入条件</a><span class="similarcore"> 所属栏目：工作动态- <span class="jcse-similarly-item-date">[2012-08-06]</span></span></p></div></div>
+    </div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item3">
+        <a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/ztzl/lszt/xysbdztbd/tjgx/art/2012/art_4e7fc2c2e25745df9de34d36e5889e11.html&amp;websiteid=110000000000000&amp;q=" target="_blank">
+            <div class="itemdiv">钕铁硼<em>稀</em><em>土</em>材料</div>
+        </a>
+        <div class="clearfix">
+            <div class="imgLeft fl">
+                <img src="/cms_files/filemanager/oldfile/miit/n973401/n1234207/n1234210/c3840996/part/3840997.jpg" width="142" height="104">
+            </div>
+            <div class="txtRight fr">
+                <p>&nbsp;&nbsp;&nbsp;钕铁硼材料作为<em>稀</em><em>土</em>材料最重要的应用领域之一，是支撑现代电子信息产业的重要基础材料之一。图为江西磊源永磁材料有限公司工人在晾晒钕铁硼<em>稀</em><em>土</em>材料。</p><span>所属栏目：图解工信 发布时间：2012-10-16</span></div>
+        </div>
+    </div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/xwdt/gxdt/sjdt/art/2020/art_793ad2acaf5149ce89f5b5f9619bfd5f.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="原材料司与包头市&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;高新区管委会领导研究&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;工作">原材料司与包头市<em>稀</em><em>土</em>高新区管委会领导研究<em>稀</em><em>土</em>工作</div></a><p>　　&nbsp;2009年6月18日，包头市市长助理、<em>稀</em><em>土</em>高新区管委会主任任福和有关同志到工业和信息化部原材料司听取工业和信息化部对包头<em>稀</em><em>土</em>工业发展的意见。　　任福首先介绍了包头<em>稀</em><em>土</em>开发区的情况和下步工作思路。包头<em>稀</em><em>土</em>高...技术产业开发区是国务院批准的全国54个国家级高新区中唯一冠以专业名称的国家级高新区，也是内蒙古自治区唯一的国家级高新区。经过多年建设，现建成了<em>稀</em><em>土</em>精矿、<em>稀</em><em>土</em>合金、混合<em>稀</em><em>土</em>化合物、各种单一<em>稀</em><em>土</em>化合物和金属，以及<em>稀</em><em>土</em>抛光粉</p><span>所属栏目：司局动态 发布时间：2009-06-22</span></div></div></div></div><div class="jcse-result-box news-result" style="display: block;"><div class="list item2"><div class="clearfix">	<div class="txtRight frro" style="float:left"><a onclick="gotoLink()" href="../../search-front-server/visit/link?url=/jgsj/ycls/ysjs/art/2020/art_6dcb7801a6494e89a4c5ea58282e099c.html&amp;websiteid=110000000000000&amp;q=" target="_blank"><div class="itemdiv" alt="包头&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;研究院被评为国家级&lt;em&gt;稀&lt;/em&gt;&lt;em&gt;土&lt;/em&gt;材料国际科技合作基地">包头<em>稀</em><em>土</em>研究院被评为国家级<em>稀</em><em>土</em>材料国际科技合作基地</div></a><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;近日，经国家科技部审定，包头<em>稀</em><em>土</em>研究院被评为国家级<em>稀</em><em>土</em>材料国际科技合作基地。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...;&nbsp;&nbsp;包头<em>稀</em><em>土</em>研究院是目前国内最大的<em>稀</em><em>土</em>科技研发机构，主要从事<em>稀</em><em>土</em>选矿、冶金分离提取、新型<em>稀</em><em>土</em>功能材料及器件的开发应用。多年来，承担了上百项国家科技攻关和“863”项目，取得了一大批前沿成果。先后与美</p><span>所属栏目：有色金属 发布时间：2009-12-13</span></div></div></div></div></div></div></div>
+
+						<div class="ui-noresult-box" style="display: none;margin-top:20px;margin-bottom:40px;">
+							<div style="margin-bottom: 15px;font-size: 17px">抱歉，在当前分类下均未找到与<span id="none_q"></span>相关的信息。
+							</div>
+							<div style="margin-bottom:5px;font-size:17px;font-weight: bold;">建议：</div>
+							<div>1、检查输入是否正确</div>
+							<div>2、简化输入词</div>
+							<div>3、尝试其他相关词，如同义、近义词等</div>
+						</div>
+						<!-- 分类 -->
+
+						
+
+					</div>
+	
+
+					<div class="con_right">
+						<div class="con_right_list">
+
+							<div id="jcse-rigisterrank" class="jcse-rigisterrank" style="display: none;">
+								<div class="right_tit1 right_tit">
+									户籍所在地相关信息
+								</div>
+								<div class="right_list">
+									<ul id="rigisterrank" class="rigisterrank">
+									</ul>
+								</div>
+							</div>
+							<div id="jcse-workrank" class="jcse-workrank" style="display: none;">
+								<div class="right_tit2 right_tit">
+									职业相关
+								</div>
+								<div class="right_list">
+									<ul id="workrank" class="workrank">
+									</ul>
+								</div>
+							</div>
+							
+							<div id="jcse-userrecommend" class="jcse-userrecommend" style="display: none;">
+								<div class="right_tit4 right_tit">
+									用户推荐
+								</div>
+								<div class="right_list">
+									<ul id="userecommendrank" class="userecommendrank">
+									</ul>
+								</div>
+							</div>
+							<div id="jcse-relatedword" class="jcse-relatedword">
+								<div class="right_tit5 right_tit">
+									相关词语
+								</div>
+								<div class="right_list">
+									<ul id="relatedrank" class="relatedrank">
+									</ul>
+								</div>
+							</div>
+							<div id="jcse-ralatedimages" class="jcse-ralatedimages" style="display: block;">
+								<div class="right_tit0 right_tit">
+									相关图片
+								</div>
+								<div class="right_list">
+									<div id="n2"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/ztzl/lszt/xysbdztbd/tjgx/art/2012/art_4e7fc2c2e25745df9de34d36e5889e11.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n973401/n1234207/n1234210/c3840996/part/3840997.jpg"></div></div><div class="pic-title">钕铁硼<em>稀</em><em>土</em>材料</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2020/art_b224c86cbc1f44dbbe728c36f50e7616.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057569/n3057572/c4626731/pic_4626731.jpg"></div></div><div class="pic-title">2016年<em>稀</em><em>土</em>行业座谈会议在京召开</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwdt/gxdt/ldhd/art/2020/art_1914784129254b18a3da2d90796f55e8.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146290/n1146402/n7039597/c7082478/pic_7082478.jpg"></div></div><div class="pic-title">辛国斌出席2016年<em>稀</em><em>土</em>行业座谈会议</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2020/art_887728bd623b46f7a7029b91728e93bf.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057569/n3057579/c3564885/part/3564886.jpg"></div></div><div class="pic-title">2011<em>稀</em><em>土</em>新材料应用交流会在哈尔滨召开</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwdt/gxdt/ldhd/art/2020/art_cea488fe3f6f416aade6cac3aced0d61.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146290/n1146402/n7039597/c7052744/pic_7052744.jpg"></div></div><div class="pic-title">苏波出席重点<em>稀</em><em>土</em>省（区、市）和企业工作会议</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwdt/gxdt/sjdt/art/2020/art_868b7eda55e14a34b246d31c3ceb464b.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146290/n1146402/n1146440/c3234949/pic_3234949.jpg"></div></div><div class="pic-title">原材料司到四川省调研<em>稀</em><em>土</em>行业发展情况</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/xt/art/2020/art_afe6cebac4e24b3a94a63c75438d9525.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057569/n3057579/c6372163/pic_6372163.jpg"></div></div><div class="pic-title">王江平出席第十届中国包头<em>稀</em><em>土</em>产业论坛</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/bgt/gzdt/art/2020/art_8a51e6fff0f24a998fd32af723f2b65f.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057485/n3057488/c3642042/pic_3642042.gif"></div></div><div class="pic-title">李毅中一行到江西考察调研<em>稀</em><em>土</em>行业发展情况</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ycls/gzdt/art/2020/art_e2088a4d759f49f2af3d4fab6537a0c6.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057569/n3057572/c3564478/pic_3564478.jpg"></div></div><div class="pic-title">贯彻落实国务院精神 全国<em>稀</em><em>土</em>工作会议在京召开</div></div></a><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/gyhxxhb/jgsj/xfpgys/gzdt/art/2020/art_3f892a7eb35c480183eadd9d5146fa55.html&amp;websiteid=110000000000000&amp;q=" style="margin:10px;float:left"><div class="pic-box"><div class="pic-img-box"><div class="pic-img"> <img src="/cms_files/filemanager/oldfile/miit/n1146285/n1146352/n3054355/n3057601/n3057608/c6218157/pic_6218157.png"></div></div><div class="pic-title">王江平赴内蒙古调研<em>稀</em><em>土</em>、乳制品产业发展情况</div></div></a></div>
+								</div>
+							</div>
+
+							<div id="jcse-artrank" class="jcse-artrank">
+								<div class="right_tit3 right_tit" style="display: block;">
+									热门文章
+								</div>
+								<div class="right_list">
+									<ul id="artrank" class="artrank">
+									<li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/gyhxxhb/bld/llc/index.html&amp;websiteid=110000000000000&amp;q=">李乐成&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/zfs/xxyd/art/2020/art_985272bf39f7455db99c0db18c7e0ed0.html&amp;websiteid=110000000000000&amp;q=">紧扣高质量发展要求 加快发展先进制造业&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/ztzl/rdzt/2017ngyhxxhbsjds/art/2020/art_076e300b20654e699d40e99b316adb5b.html&amp;websiteid=110000000000000&amp;q=">工业互联网助推先进制造业发展&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/qyj/cyjq/art/2020/art_f062230449514706a27db3d31917d2ef.html&amp;websiteid=110000000000000&amp;q=">洛阳先进制造业集聚区：大力培育五大产业集群&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwdt/gxdt/ldhd/art/2022/art_6e3c2c2a25d64f0886fec636c1b0b3db.html&amp;websiteid=110000000000000&amp;q=">2022世界先进制造业大会在山东济南开幕&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/zfs/gzdt/art/2020/art_c76a7f928f02443597cbb6c9ba6e5444.html&amp;websiteid=110000000000000&amp;q=">紧扣高质量发展要求 加快发展先进制造业&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/cws/xyjjdt/art/2022/art_227423b192b4483488235fc1b5a46c4d.html&amp;websiteid=110000000000000&amp;q=">进出口银行大力支持先进制造业发展&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwfb/gxdt/sjdt/art/2024/art_4a76d263e44d4214982b69a481e6762e.html&amp;websiteid=110000000000000&amp;q=">2024年国家先进制造业集群培育提升推进...&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/xwdt/szyw/art/2022/art_400db7eccae148008858b244f4286bcb.html&amp;websiteid=110000000000000&amp;q=">工业和信息化部将从5方面推动先进制造业发展&nbsp;&nbsp;&nbsp;</a></li><li class="art"><a onclick="gotoLink()" target="_blank" href="../../search-front-server/visit/link?url=/jgsj/ghs/gzdt/art/2021/art_c59a0995a34d4c26a850faae580f0544.html&amp;websiteid=110000000000000&amp;q=">先进制造业集群决赛优胜者名单公示&nbsp;&nbsp;&nbsp;</a></li></ul>
+								</div>
+							</div>
+
+							<div id="jcse-datacensus" class="jcse-datacensus" style="display:none;">
+								<div class="right_tit6 right_tit">
+									数据统计
+								</div>
+								<div class="right_list" id="datacensus" _echarts_instance_="ec_1747670295715" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 100px; height: 344px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="344" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 344px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+							</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				
+				<!--数据库-->
+				<div class="sjk-wrap" style="display: none;">
+					<div class="prompting">为您找到相关结果约 <span>828</span> 个</div>
+					<div class="sjfl">
+						<input id="sjk-sx" type="hidden">
+						<dl>
+							<dt>数据库类别</dt>
+							<dd>
+								<!--<span style="display:none;">部门:</span>
+								<ol class="department"><li style="color: rgb(14, 111, 205);" title="规划司">规划司</li>
+									<li title="信息化和软件服务业司">信息化和软件服务业司</li>
+									<li title="原材料工业司">原材料工业司</li>
+									<li title="安全生产司">安全生产司</li>
+									<li title="无线电管理局">无线电管理局</li>
+									<li title="信息通信发展司">信息通信发展司</li>
+									<li title="信息通信管理局">信息通信管理局</li>
+								</ol>
+
+								<hr style="display:none;" style="border:0;border-top:1px dashed #ccc;">
+								<span style="display:none;">分类:</span>
+								<ol class="typeName" style="display:none;"><li title="外商投资经营电信">外商投资经营电信</li>
+									<li title="监控化学品">监控化学品</li>
+									<li title="民爆物品生产">民爆物品生产</li>
+									<li title="专业数据库">专业数据库</li>
+									<li title="稀土、黄金等行业管理">稀土、黄金等行业管理</li>
+									<li title="通信业务和信息化固定资产">通信业务和信息化固定资产</li>
+									<li title="电信和互联网">电信和互联网</li>
+									<li title="无线电和卫星通信">无线电和卫星通信</li>
+									<li title="电子认证服务">电子认证服务</li>
+								</ol>
+								<hr style="border:0;border-top:1px dashed #ccc;">-->
+
+								<span>事项:</span>
+								<i class="sjk-sxicon" style="position: absolute; right: 23px; cursor: pointer; color:black;">▼</i>
+								<ol class="ruleName">
+									<li title="执法人员">执法人员</li>
+									<li title="执法事项">执法事项</li>
+									<li title="标准规范">标准规范</li>
+									<li title="批准开采黄金矿产申请企业名单">批准开采黄金矿产申请企业名单</li>
+									<li title="新能源汽车动力蓄电池回收服务网点信息">新能源汽车动力蓄电池回收服务网点信息</li>
+									<li title="互联网电子公告服务专项审批及备案">互联网电子公告服务专项审批及备案</li>							
+									<li title="军工电子计量技术机构建立认定">军工电子计量技术机构建立认定</li>
+									
+									<!--<li title="执法人员">执法人员</li>
+									<li title="执法事项">执法事项</li>
+									<li title="标准规范">标准规范</li>
+									<li title="批准开采黄金矿产的企业名单">批准开采黄金矿产的企业名单</li>
+									<li title="回收服务网点">回收服务网点</li>
+									<li title="新建、扩建或者改建用于生产第二、三类监控化学品和第四类监控化学品中含磷、硫、氟的特定有机化学品的设施建设审批和竣工验收">新建、扩建或者改建用于生产第二、三类监控化学品和第四类监控化学品中含磷、硫、氟的特定有机化学品的设施建设审批和竣工验收</li>
+									<li title="第二、三类监控化学品和第四类监控化学品中含磷、硫、氟的特定有机化学品生产特别许可">第二、三类监控化学品和第四类监控化学品中含磷、硫、氟的特定有机化学品生产特别许可</li>
+									<li title="民用爆炸物进出口审批_结果管理">民用爆炸物进出口审批_结果管理</li>
+									<li title="民用爆炸物品生产许可_结果管理">民用爆炸物品生产许可_结果管理</li>
+									<li title="国内干线传输网（含广播电视网）以及其他涉及信息安全的电信基础设施项目核准_结果管理">国内干线传输网（含广播电视网）以及其他涉及信息安全的电信基础设施项目核准_结果管理</li>
+									<li title="全国性信息网络工程或者国家规定限额以上建设项目的公用电信网、专用电信网、广播电视传输网建设审核_结果管理">全国性信息网络工程或者国家规定限额以上建设项目的公用电信网、专用电信网、广播电视传输网建设审核_结果管理</li>
+									<li title="无线电发射设备进关核准_结果管理">无线电发射设备进关核准_结果管理</li>
+									<li title="无线电发射设备型号核准">无线电发射设备型号核准</li>
+									<li title="电子认证服务行政许可_结果管理">电子认证服务行政许可_结果管理</li>
+									<li title="外商投资经营电信业务审批">外商投资经营电信业务审批</li>
+									<li title="电信设备进网许可（含试用）审批">电信设备进网许可（含试用）审批</li>
+									<li title="电信业务经营许可">电信业务经营许可</li>
+									<li title="电信网码号资源使用和调整审批_结果">电信网码号资源使用和调整审批_结果</li>
+									<li title="域名注册管理机构2017更新">域名注册管理机构2017更新</li>
+									<li title="设立互联网域名注册服务机构审批">设立互联网域名注册服务机构审批</li>
+									<li title="工业和信息化部关于同意中国卫通集团有限公司申请租用亚太5、6、7号卫星转发器资源的批复">工业和信息化部关于同意中国卫通集团有限公司申请租用亚太5、6、7号卫星转发器资源的批复</li>
+									<li title="稀土冶炼分离项目核准">稀土冶炼分离项目核准</li>
+									<li title="开办农药生产企业审批">开办农药生产企业审批</li>
+									<li title="生产尚未制定国家标准、行业标准但已有企业标准的农药">生产尚未制定国家标准、行业标准但已有企业标准的农药</li>
+									<li title="稀土矿山开发项目核准">稀土矿山开发项目核准</li>-->
+								</ol>
+							</dd>
+						</dl>
+					</div>
+					<div class="sjk-style"></div>
+
+					<div class="ui-noresult-box" style="display: none;margin-top:20px;margin-bottom:40px;">
+						<div style="margin-bottom: 15px;font-size: 17px">抱歉，在当前分类下均未找到与<span id="none_q"></span>相关的信息。
+						</div>
+						<div style="margin-bottom:5px;font-size:17px;font-weight: bold;">建议：</div>
+						<div>1、检查输入是否正确</div>
+						<div>2、简化输入词</div>
+						<div>3、尝试其他相关词，如同义、近义词等</div>
+					</div>
+				</div>
+				
+
+				<!--分页-->
+				<div id="pagination" data-pagecount="" style="text-align:center" class="manu"><a href="javascript:void(0);" paged="1">首页</a><span class="disabled" paged="上一页">上一页 </span><span class="current" paged="1">1</span><a href="javascript:void(0);" paged="2">2</a><a href="javascript:void(0);" paged="3">3</a><a href="javascript:void(0);" paged="4">4</a><a href="javascript:void(0);" paged="5">5</a><a href="javascript:void(0);" paged="2">下一页 </a><a href="javascript:void(0);" paged="83">尾页</a></div>
+				
+			</div>
+
+
+		</div>
+	</div>
+<!-- 尾部 -->
+<script type="text/javascript">	
+	$(function(){
+
+var hanxiatime=setInterval(function(){
+if($('.news-type .jcse-result-box').length>1){
+var hanxia;
+		for(var i=0;i<$('.news-type .jcse-result-box').length;i++){
+			if(i!=0&&$('.news-type .jcse-result-box').eq(i).find('.itemdiv').text()==='工业和信息化部总工程师'){
+				if(1!=0){hanxia=i;}
+				//console.log(i)
+				
+			}
+		};
+		$('.news-type .jcse-result-box').eq(hanxia).remove().clone().prependTo('.news-type');
+		
+}
+
+},100);})
+</script>
+<script src="/cms_files/filemanager/script/20201/840397482ca5455aa2209d4942e43e72.js" type="text/javascript" charset="utf-8"></script><link href="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/public_base.css" rel="stylesheet"><div class="am-mobilize-btn" id="am-mobilize-btn" style="display:none;border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: rgb(239, 239, 239); z-index: 1000000000; position: fixed; right: 10px; bottom: 10px; width: 213.889px; height: 213.889px;"><div id="am-btn-icon-return" style="position: absolute; text-align: center; left: 0px; bottom: -6px; background-color: rgb(239, 239, 239); border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; width: 213.889px; font-size: 30.5556px;">返回手机版</div><div class="am-mobilize-btn-inner" id="am-mobile-btn-inner" style="position: absolute; width: 69%; height: 69%; left: 50%; top: 50%; margin-top: -40%; margin-left: -34.5%;"><div id="am-btn-icon-red" style="position: absolute; transition-property: all; transition-timing-function: linear; transition-duration: 0.5s; background-color: rgb(254, 135, 94); width: 66%; left: 17%; height: 110%; top: -5%; border-radius: 5px;"></div><div id="am-btn-icon-blue" style="position: absolute; transition-property: all; transition-timing-function: linear; transition-duration: 0.5s; background-color: rgb(84, 193, 220); width: 8%; right: 46%; height: 8%; bottom: 0px; border-radius: 100%;"></div><div id="am-btn-icon-green" style="position: absolute; transition-property: all; transition-timing-function: linear; transition-duration: 0.5s; background-color: rgb(169, 218, 91); border-radius: 0px; width: 54%; right: 23%; height: 85%; top: 0px;"></div></div></div>
+<link href="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/0New_tylmy.css" rel="stylesheet">
+<link href="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/2024lkq_base.css" rel="stylesheet">
+<script src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/2024lkq_base.js"></script>
+<script src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/2024sc_base.js"></script>
+<div class="mob-bottom">
+	<a href="javascript:void(0);" class="btm01 m-destop"><img height="20" src="/cms_files/filemanager/picture/20203/87a26ea2ac994dd1a42fb1d25653a0f4.png">电脑版网站</a>
+	<a href="https://bzxx.miit.gov.cn/qa/znzx/main" class="btm02"><img height="24" src="/cms_files/filemanager/1226211233/picture/20222/c839e24f7e7841c990029b048d5a386a.png">阳光小信</a>
+</div>
+<div class="bottom">
+	<div class="page-con">
+		<div class="bottom-t">
+			<a href="https://www.gov.cn/" target="_blank">中国政府网</a>
+			<a href="/zzjg/index.html#dfzgbm" target="_blank">地方主管部门</a>
+			<a href="/zzjg/index.html#bsdw" target="_blank">部属单位</a>
+			<a href="/zzjg/index.html#zsgx" target="_blank">直属高校</a>
+			<a href="https://www.miit.gov.cn/wzdt/index.html" target="_blank">网站地图</a>                      
+		</div>
+		<div class="bottom-b">
+			<div class="bottom-bl">
+				<!-- <script id="_jiucuo_" sitecode="bm07000001" src="https://zfwzgl.www.gov.cn/exposure/jiucuo.js"></script>                    -->
+				<a href="http://bszs.conac.cn/sitename?method=show&amp;id=072863338FF66940E053022819ACCE02"><img class="bottom-bl-img2" src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/bottom_img01.png"></a>    
+				<a><img class="bottom-bl-img2" src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/bottom_img02.png"></a>    
+				<a class="mob-show"><img src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/bottom_img03.png"></a>   
+			</div>
+			<div class="bottom-bm">
+				<p><span>主办单位：中华人民共和国工业和信息化部</span><span>地址：中国北京西长安街13号</span><span>邮编: 100804</span></p>
+				<p><span>版权所有：中华人民共和国工业和信息化部</span><span>网站标识码：bm07000001</span></p>
+				<p><span><a href="https://beian.miit.gov.cn/" target="_blank">京ICP备04000001号-2</a></span><span><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700068" target="_blank"><img style="top: -1px;margin-right: 3px;" src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/bottom_img04.png">京公网安备 11040102700068号</a></span></p>                      
+			</div>   
+			<div class="bottom-br">
+				<a href="https://zfwzgl.www.gov.cn/exposure/jiucuo.html?site_code=bm07000001&amp;url=https%3A%2F%2Fwww.miit.gov.cn%2Fgxsj%2Findex.html"><img src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/bottom_img03.png"></a>                    
+			</div>   
+		</div>
+	</div>
+</div>
+<style>
+#moe_black{display:none;position:absolute;top:0;left:0;z-index:999;width:100%;height:100%;}
+#moe_black #moe_golink{display:none;position:fixed;z-index:1000;top:0;right:0;bottom:0;left:0;margin:auto;width:560px;height:230px;background:rgb(242,246,255);border-radius:10px;color:#4b4b4b;border:2px solid rgb(86,127,230)}
+#moe_black #moe_golink p{text-align:right;margin-top:-30px}
+#moe_black #moe_golink p img,
+#moe_black #golink_btn strong{cursor:pointer;}
+#moe_black #golink_info{margin:30px 30px 15px;padding-bottom:15px;border-bottom:1px solid #7994d7;font-size:24px;text-align:center;line-height:36px}
+#moe_black #golink_info span{color:#054696;font-weight:bold;}
+#moe_black #golink_btn{text-align:center;line-height:41px;font-size:18px}
+#moe_black #golink_btn a{color:#fff;background:#054696;display:inline-block;padding:0 15px;border-radius:5px}
+#moe_black #golink_btn strong{margin-left:50px;}
+#moe_black #golink_info img,#golink_btn img{vertical-align:middle}
+@media print {
+  @page {
+    size: 1280px; //页面大小自动，防止打印版不全
+    margin: 5mm; //页面边距的设定
+  }
+}
+</style>
+<script defer="" async="" type="text/javascript" src="//gov.govwza.cn/dist/aria.js?appid=ebea76f0dad67fde57b8367c5106f53d" charset="utf-8" wapforceoldfixed="false" loaddata="false" id="ariascripts"></script>
+<script src="/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/pc_base.js"></script>
+<style>
+.pdy-more a{float:right;}}
+a br{display:none !important;}
+</style>
+<script src="/cms_files/filemanager/script/juba/jubascript.js"></script>
+
+<iframe src="/wzpz/tjfz/tyjs/index.html" width="1" height="1" style="display:none;" id="ariad1hrohcnjgo"></iframe> 
+<script>
+if($("#jcse-rigisterrank a").length==0){
+	$("#jcse-rigisterrank").hide();
+}
+if($("#jcse-workrank a").length==0){
+	$("#jcse-workrank").hide();
+}
+</script>
+<img style="display:none;" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/searchbg.png">
+<img style="display:none;" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jsxh_top_2.png">
+<img style="display:none;" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jsxh_top_3.png">
+<img style="display:none;" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/jsxh_top_4.png">
+<img style="display:none;" src="/cms_files/webmiit/tplobject/gxbsy/75cc7700fbb34d2ca6d4a03e24f7c6ad/images/promptingIcon.jpg">
+
+<div class="modal">
+	<div class="modal_wrap">
+		<div class="modal_wrap2">
+			<div class="modal_content">
+				<div class="modal_header">
+					<div class="xq">
+					  <img src="data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABQAAD/4QNvaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NjIwOTMwQjJCNEU5RTUxMTk3OTNGMDU1MTczRUI5RUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTlGMEQxOTVFQTRGMTFFNUFEMjJFMDlDMjA0QkU5MjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTlGMEQxOTRFQTRGMTFFNUFEMjJFMDlDMjA0QkU5MjMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMEJGQzQwMkQ2RTlFNTExQkU0MkE5NTcwQjI0QjNCMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MjA5MzBCMkI0RTlFNTExOTc5M0YwNTUxNzNFQjlFRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAICAgICAgICAgIDAgICAwQDAgIDBAUEBAQEBAUGBQUFBQUFBgYHBwgHBwYJCQoKCQkMDAwMDAwMDAwMDAwMDAwBAwMDBQQFCQYGCQ0LCQsNDw4ODg4PDwwMDAwMDw8MDAwMDAwPDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIABMAEwMBEQACEQEDEQH/xACQAAEAAwAAAAAAAAAAAAAAAAAHBggJAQEBAQEBAAAAAAAAAAAAAAAFBgQDBxAAAAMGBAIDEQAAAAAAAAAAAQIDERIEBQYHADETFBcI8DRUIUFRcYGRsSJSMyREZBU1NjgRAAAEAwUGAwkAAAAAAAAAAAERAgMAMQQhUaESBUEyExQVBmFSU5GxwdHxctJUB//aAAwDAQACEQMRAD8A2VrmeUAe39YJoTinDxR6emBUSJxEGJhUGEUAAKBTZtyZhqhYqgqmzSss6dirwjBUONcJVqTyjddFS+Xyc3QhbO0UhIaytLLZQmjFbOBqJOLNM0wGMXEwRApRaRWiYREGFD1WYru4WaNVe4LjdQKjAxQWXdCRpH6wLpjj4U6ASpsAt3jOYzthi+/3mebxBsU15vuo7N1nbsDcvp/pVXtT+MbuLU+dnH5wA1FyCUvJKYntQJ3FmkQeUSuKmCaBoFEoHGHQMqBREFBY11mKCm/oDzryWxZSGZQBMdoldBrvbaEIFWcbAEZRXO3lpeXyoqNkk6rK+4UlUscRU00p4YYp9sYixyEB4c3iFKby4pNR1fVGKhSGaXOgCJRzsD42QXS0VI42CnHsqhmBSiZcC+VZv9NFz7GXwYxdd1r9LGO/TqD18I1Kr3dcOq0e3P65MW9Vd6op7Pe8WPK9PLm25b6b7wiwqT4KvtG66BDlV1+ANu3do7t41j+i9+Qic3u758Od1l1N6cwv8oQfo58oiW33jD78VqfIM1fpms0/T0yxP2FtxhK3wwj/2Q==" alt="" width="19" height="19" style="margin-right: 5px;">
+					  详细信息</div>
+					</div>
+				<div class="modal_body">
+					<table>
+
+					</table>
+				</div>
+				<div class="modal_footer">
+					<div class="qx_btn" id="close">取消</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/cms_files/filemanager/1226211233/script/20249/9477a8feab48455b9027c07f21f71e93.js" type="text/javascript" charset="utf-8"></script>
+
+
+<div class="autocomplete-suggestions" style="position: absolute; display: none; width: 1240px; max-height: 1000px; z-index: 9999;"></div></body></html>
