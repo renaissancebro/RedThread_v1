@@ -30,3 +30,17 @@
 6. Anti-scraping Traps
 7. Data extraction & Post-processing
 8. System resilience & logging
+
+- Ajax loading for pagination vs new url
+
+## Struggle concepts
+
+- Confusion with promise, arrow function inside
+- target created section of code
+- sleep function syntax
+- pagination loop a[paged="${i}"] css selector? and waitForFunction
+- page.evaluate() !!!! still don't fully get it
+- what does [...] mean in side an array
+- ? ternary operator meaning?
+- Grabbing containers in js!!!
+- href returns with titles not string but objects, so i need JSON.stringify

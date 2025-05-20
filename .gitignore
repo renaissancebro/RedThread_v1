@@ -28,3 +28,4 @@ data/
 venv/
 venv/
 venv/
+.env
