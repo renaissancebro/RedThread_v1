@@ -44,3 +44,5 @@
 - ? ternary operator meaning?
 - Grabbing containers in js!!!
 - href returns with titles not string but objects, so i need JSON.stringify
+
+- CSV and pdf markdonwn2, and weasyprint html

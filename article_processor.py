@@ -1,15 +1,17 @@
 import json
 import time
+import csv
 from datetime import datetime
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-
+from outputs.JSON_to_CSV import export_to_csv
+from outputs.JSON_to_PDF import export_to_pdf
 load_dotenv()
 client = OpenAI(api_key=os.getenv("api_key"))
 
-# Load your article file
-with open("miit_enriched.json", "r", encoding="utf-8") as f:
+# Load all scraped articles
+with open("data/miit_enriched.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 results = []
@@ -33,57 +35,50 @@ Return the result as **valid JSON only**. No explanation or extra formatting.
 **Content (Chinese)**:
 {article['content'][:4000]}
 """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,
+        )
+        return json.loads(response.choices[0].message.content)
+    except Exception as e:
+        print(f"❌ GPT or JSON error for: {article['title']}\n{e}")
+        return None
 
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
+# 🔁 Process each article
+for i, article in enumerate(articles):
+    print(f"\n🔄 [{i+1}/{len(articles)}] Processing: {article['title']}")
+    parsed = summarize_article(article)
 
-    return response.choices[0].message.content
+    if parsed:
+        results.append({
+            "title": article["title"],
+            "href": article["href"],
+            "translation": parsed.get("translation", ""),
+            "summary": parsed.get("summary", []),
+            "insights": parsed.get("insights", [])
+        })
+    else:
+        failures.append(article)
 
-# ✅ Select one article
-article = articles[0]
-print(f"Processing: {article['title']}")
+    time.sleep(1.5)
 
-# 🔁 Process with error handling
-raw_output = summarize_article(article)
-
-try:
-    parsed = json.loads(raw_output)
-    print("\n📌 Translation:\n", parsed["translation"])
-    print("\n📝 Summary:\n", "\n".join(f"- {s}" for s in parsed["summary"]))
-    print("\n🚀 Insights:\n", "\n".join(f"- {i}" for i in parsed["insights"]))
-
-    results.append({
-        "title": article["title"],
-        "href": article["href"],
-        "translation": parsed["translation"],
-        "summary": parsed["summary"],
-        "insights": parsed["insights"]
-    })
-
-except Exception as e:
-    print("❌ JSON parsing failed.")
-    print("Raw output:\n", raw_output)
-    print("Error:\n", e)
-    failures.append({
-        "title": article["title"],
-        "href": article["href"],
-        "error": str(e)
-    })
-
-# Optional: wait to avoid hitting rate limits
-time.sleep(1.5)
-
-# 💾 Save outputs
+# 💾 Save enriched JSON
 timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-with open(f"summaries_{timestamp}.json", "w", encoding="utf-8") as f:
+os.makedirs("outputs/output", exist_ok=True)
+
+json_path = f"outputs/output/summaries_{timestamp}.json"
+with open(json_path, "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
-if failures:
-    with open(f"failures_{timestamp}.log", "w", encoding="utf-8") as f:
-        for fail in failures:
-            f.write(f"{fail['title']} | {fail['error']}\n")
+# 💾 Save CSV
+csv_path = f"outputs/output/summaries_{timestamp}.csv"
+export_to_csv(results, csv_path)
+# 💾 Save PDF
+pdf_path = f"outputs/output/brief_{timestamp}.pdf"
+export_to_pdf(results, pdf_path)
+# 🧱 Log failures
 
-print(f"\n✅ Done. {len(results)} succeeded, {len(failures)} failed.")
+print(f"\n✅ All done — {len(results)} succeeded, {len(failures)} failed")
+print(f"📁 Outputs saved to: outputs/output/")
