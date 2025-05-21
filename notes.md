@@ -46,3 +46,6 @@
 - href returns with titles not string but objects, so i need JSON.stringify
 
 - CSV and pdf markdonwn2, and weasyprint html
+
+- human friendly data and machine friendly data mismatches, like ```json and more
+- while loop parsing cleaning
