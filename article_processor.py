@@ -47,7 +47,7 @@ Return the result as **valid JSON only**. No explanation or extra formatting.
         return None
 
 # 🔁 Process each article
-for i, article in enumerate(articles):
+for i, article in enumerate(articles[:1]):
     print(f"\n🔄 [{i+1}/{len(articles)}] Processing: {article['title']}")
     parsed = summarize_article(article)
 

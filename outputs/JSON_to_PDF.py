@@ -35,3 +35,4 @@ def export_to_pdf(results, path):
         print(f"✅ PDF saved to {path}")
     except Exception as e:
         print(f"❌ Failed to generate PDF: {e}")
+

@@ -13,8 +13,8 @@ import json
 import os
 from datetime import datetime
 
-from outputs.json_to_csv import export_to_csv
-from outputs.json_to_pdf import export_to_pdf
+from outputs.JSON_to_CSV import export_to_csv
+from outputs.JSON_to_CSV import export_to_pdf
 
 # 🔄 Load enriched data (produced by GPT pipeline)
 input_path = "data/enriched_output/articles_enriched_20250521_1200.json"
