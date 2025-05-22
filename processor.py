@@ -35,22 +35,32 @@ def clean_code_fences(raw_text):
 
 def summarize_article(article):
     prompt = f"""
-    You are a bilingual Chinese-English policy analyst.
+You are a bilingual Chinese-English policy analyst.
 
-    Please analyze the following Chinese-language article and return a structured JSON with the following keys:
+Analyze the following Chinese regulation and generate a structured JSON with these keys:
 
-    - "translation": a professional, fluent English translation of the full article
-    - "summary": exactly three bullet points that concisely capture the key ideas
-    - "insights": three actionable recommendations for a foreign business, policymaker, or strategist interacting with China
+- "title": the regulation's title in English (translate if needed)
+- "effective_date": the regulation's effective date (extract or write 'Not specified' if missing)
+- "source_url": the URL for the original article
+- "summary": 3 to 5 bullet points (short, clear sentences) summarizing the core points, context, and what’s new or important
+- "strategic_insights": 3 actionable insights for Western businesses, analysts, or policymakers (not generic, be specific and practical)
+- "key_provisions": 4 to 6 bullet points condensing the most important articles, requirements, or enforcement mechanisms from the regulation
+- "recommended_actions": 3 recommendations for how a foreign company or policymaker should respond or prepare
+- "translation": a fluent, professional English translation of the regulation’s main text (only if short; otherwise, summarize the most critical sections in fluent English)
 
-    Return the result as **valid JSON only**. No explanation or extra formatting.
+**Instructions:**
+- Do NOT include the original Chinese text.
+- Be concise. Total output should fit within a 1–2 page brief when rendered.
+- Use clear, professional English with no unnecessary repetition.
+- Return **valid JSON only** (no markdown, code fences, or explanation).
 
-    ---
-    **Title**: {article['title']}
+---
+Title: {article['title']}
+Source URL: {article['href']}
+Content (Chinese): {article['content']}
+"""
 
-    **Content (Chinese)**:
-    {article['content'][:4000]}
-    """
+    # Print the prompt for debugging
 
     print(f"[DEBUG] Prompt for '{article['title']}':\n{prompt}\n{'-'*50}")
     # Send the prompt to GPT-4o
@@ -76,22 +86,28 @@ def summarize_article(article):
 
 
 # 🔁 Process each article
-for i, article in enumerate(articles[:1]):
+for i, article in enumerate(articles[:3]):
     print(f"\n🔄 [{i+1}/{len(articles)}] Processing: {article['title']}")
     parsed = summarize_article(article)
 
     if parsed:
+        # Safely fill in all new keys from the prompt/response, with fallbacks for missing fields
         results.append({
-            "title": article["title"],
-            "href": article["href"],
-            "translation": parsed.get("translation", ""),
+            "title": parsed.get("title", article.get("title", "")),
+            "effective_date": parsed.get("effective_date", "Not specified"),
+            "source_url": parsed.get("source_url", article.get("href", "")),
             "summary": parsed.get("summary", []),
-            "insights": parsed.get("insights", [])
+            "strategic_insights": parsed.get("strategic_insights", []),
+            "key_provisions": parsed.get("key_provisions", []),
+            "recommended_actions": parsed.get("recommended_actions", []),
+            "translation": parsed.get("translation", "")
         })
     else:
         failures.append(article)
 
     time.sleep(1.5)
+
+
 
 # 💾 Save enriched JSON
 timestamp = datetime.now().strftime("%Y%m%d_%H%M")
