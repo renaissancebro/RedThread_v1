@@ -1,4 +1,5 @@
 import json
+import re
 import time
 import csv
 from datetime import datetime
@@ -8,7 +9,13 @@ from openai import OpenAI
 from outputs.JSON_to_CSV import export_to_csv
 from outputs.JSON_to_PDF import export_to_pdf
 load_dotenv()
-client = OpenAI(api_key=os.getenv("api_key"))
+
+# Edits to scope and permssion key, easy debug
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError("api_key not found in enviornment!")
+
+client = OpenAI(api_key=api_key)
 
 # Load all scraped articles
 with open("data/miit_enriched.json", "r", encoding="utf-8") as f:
@@ -33,6 +40,27 @@ def clean_code_fences(raw_text):
 
 
 
+emoji_pattern = re.compile(
+    "[" 
+    "\U0001F600-\U0001F64F"
+    "\U0001F300-\U0001F5FF"
+    "\U0001F680-\U0001F6FF"
+    "\U0001F1E0-\U0001F1FF"
+    "\U00002700-\U000027BF"
+    "\U000024C2-\U0001F251"
+    "]+", flags=re.UNICODE)
+
+def remove_emojis(obj):
+    if isinstance(obj, str):
+        return emoji_pattern.sub('', obj)
+    elif isinstance(obj, dict):
+        return {k: remove_emojis(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [remove_emojis(elem) for elem in obj]
+    else:
+        return obj
+
+
 def summarize_article(article):
     prompt = f"""
 You are a bilingual Chinese-English policy analyst.
@@ -49,7 +77,7 @@ Analyze the following Chinese regulation and generate a structured JSON with the
 - "translation": a fluent, professional English translation of the regulation’s main text (only if short; otherwise, summarize the most critical sections in fluent English)
 
 **Instructions:**
-- Do NOT include any emojis
+- Do NOT include any emojis. Return plain, professional English text. The output must contain zero emoji characters (❌, ✅, etc.).
 - Do NOT include the original Chinese text.
 - Be concise. Total output should fit within a 1–2 page brief when rendered.
 - Use clear, professional English with no unnecessary repetition.
@@ -77,7 +105,17 @@ Content (Chinese): {article['content']}
         # Clean raw output before JSON parsing
         clean_raw = clean_code_fences(raw)
         parsed = json.loads(clean_raw)
-        return parsed
+		
+		# Remove emojis from all strings in parsed response
+        sanitized = remove_emojis(parsed)
+
+        before = json.dumps(parsed)
+        after = json.dumps(sanitized)
+
+        if before != after:
+            print(f"Emojis were found and removed in '{article['title']}'")
+
+        return sanitized 
     except Exception as e:
         print(f"❌ GPT or JSON error for: {article['title']}\n{e}")
         return None
