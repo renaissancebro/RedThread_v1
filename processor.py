@@ -49,6 +49,7 @@ Analyze the following Chinese regulation and generate a structured JSON with the
 - "translation": a fluent, professional English translation of the regulation’s main text (only if short; otherwise, summarize the most critical sections in fluent English)
 
 **Instructions:**
+- Do NOT include any emojis
 - Do NOT include the original Chinese text.
 - Be concise. Total output should fit within a 1–2 page brief when rendered.
 - Use clear, professional English with no unnecessary repetition.

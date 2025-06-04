@@ -49,3 +49,8 @@
 
 - human friendly data and machine friendly data mismatches, like ```json and more
 - while loop parsing cleaning
+
+
+- A lot of problems with the venv. Need to explicitly state which python version used, 3.10 and use that across all editors to work and have no compatibility issues
+
+- Learn pyenv
