@@ -41,7 +41,7 @@ def clean_code_fences(raw_text):
 
 
 emoji_pattern = re.compile(
-    "[" 
+    "["
     "\U0001F600-\U0001F64F"
     "\U0001F300-\U0001F5FF"
     "\U0001F680-\U0001F6FF"
@@ -105,7 +105,7 @@ Content (Chinese): {article['content']}
         # Clean raw output before JSON parsing
         clean_raw = clean_code_fences(raw)
         parsed = json.loads(clean_raw)
-		
+
 		# Remove emojis from all strings in parsed response
         sanitized = remove_emojis(parsed)
 
@@ -115,7 +115,7 @@ Content (Chinese): {article['content']}
         if before != after:
             print(f"Emojis were found and removed in '{article['title']}'")
 
-        return sanitized 
+        return sanitized
     except Exception as e:
         print(f"❌ GPT or JSON error for: {article['title']}\n{e}")
         return None
@@ -132,14 +132,15 @@ for i, article in enumerate(articles[:3]):
     if parsed:
         # Safely fill in all new keys from the prompt/response, with fallbacks for missing fields
         results.append({
-            "title": parsed.get("title", article.get("title", "")),
-            "effective_date": parsed.get("effective_date", "Not specified"),
-            "source_url": parsed.get("source_url", article.get("href", "")),
-            "summary": parsed.get("summary", []),
-            "strategic_insights": parsed.get("strategic_insights", []),
-            "key_provisions": parsed.get("key_provisions", []),
-            "recommended_actions": parsed.get("recommended_actions", []),
-            "translation": parsed.get("translation", "")
+
+            "title": remove_emojis(parsed.get("title", article.get("title", ""))),
+            "effective_date": remove_emojis(parsed.get("effective_date", "Not specified")),
+            "source_url": remove_emojis(parsed.get("source_url", article.get("href", ""))),
+            "summary": remove_emojis(parsed.get("summary", [])),
+            "strategic_insights": remove_emojis(parsed.get("strategic_insights", [])),
+            "key_provisions": remove_emojis(parsed.get("key_provisions", [])),
+            "recommended_actions": remove_emojis(parsed.get("recommended_actions", [])),
+            "translation": remove_emojis(parsed.get("translation", ""))
         })
     else:
         failures.append(article)
@@ -160,6 +161,7 @@ with open(json_path, "w", encoding="utf-8") as f:
 csv_path = f"outputs/output/summaries_{timestamp}.csv"
 export_to_csv(results, csv_path)
 # 💾 Save PDF
+print(json.dumps(results, indent=2, ensure_ascii=False))
 pdf_path = f"outputs/output/brief_{timestamp}.pdf"
 export_to_pdf(results, pdf_path)
 # 🧱 Log failures
