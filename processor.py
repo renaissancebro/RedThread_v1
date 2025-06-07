@@ -168,3 +168,19 @@ export_to_pdf(results, pdf_path)
 
 print(f"\n✅ All done — {len(results)} succeeded, {len(failures)} failed")
 print(f"📁 Outputs saved to: outputs/output/")
+
+import subprocess
+import platform
+
+# Open the generated PDF automatically (works across OSes)
+def open_file(filepath):
+    if platform.system() == "Darwin":  # macOS
+        subprocess.run(["open", filepath])
+    elif platform.system() == "Windows":
+        os.startfile(filepath)
+    elif platform.system() == "Linux":
+        subprocess.run(["xdg-open", filepath])
+    else:
+        print(f"❓ Unknown OS — please open the file manually: {filepath}")
+
+open_file(pdf_path)

@@ -57,7 +57,7 @@ const searchTerm = "稀土"; // Search term for the MIIT website
 
   const allResults = [];
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 2; i++) {
     if (i > 1) {
       const selector = `a[paged="${i}"]`;
       console.log(`📎 Navigating to page ${i}...`);

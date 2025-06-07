@@ -16,8 +16,8 @@ const outputPath = path.join(__dirname, "miit_enriched.json");
     headless: false,
     protocolTimeout: 60000,
   });
-
-  for (let i = 0; i < data.length; i++) {
+  // How many articles to enrich : data.length
+  for (let i = 0; i < 2; i++) {
     const item = data[i];
     console.log(`\n🔍 [${i + 1}/${data.length}] Visiting: ${item.title}`);
     const page = await browser.newPage();
